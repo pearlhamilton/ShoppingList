@@ -32,9 +32,20 @@ router.get('/:id', async (req,res) => {
 router.post('/', async (req, res) => {
     try {
         const newItem = await Item.create(req.body.item_name, req.body.amount)
+        console.log(newItem)
         res.json(newItem)
     } catch(err) {
         res.status(404).json({err})
+    }
+})
+
+router.patch('/:id', async (req, res) => {
+    try {
+        const item = await Item.findById(parseInt(req.params.id))
+        const updatedItem = await item.update(req.body.item_name, req.body.amount)
+        res.json({item: updatedItem})
+    } catch(err) {
+        res.status(500).json({err})
     }
 })
 

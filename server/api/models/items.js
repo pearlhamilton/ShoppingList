@@ -40,7 +40,9 @@ class Item {
         return new Promise (async (resolve, reject) => {
             try {
                 let itemData = await db.query(`INSERT INTO items (item_name, amount) VALUES ($1, $2) RETURNING *;`, [ item_name, amount ]);
+                console.log(itemData)
                 let newItem = new Item(itemData.rows[0]);
+                console.log(newItem)
                 resolve (newItem);
             } catch (err) {
                 reject('Error creating item');
@@ -48,6 +50,17 @@ class Item {
         });
     }
 
+    update() {
+        return new Promise (async (resolve, reject) => {
+            try {
+                let updatedItemData = await db.query(`UPDATE items SET amount = amount + 1 WHERE id = $1 RETURNING *;`, [ this.id ]);
+                let updatedItem = new Item(updatedItemData.rows[0]);
+                resolve (updatedItem);
+            } catch (err) {
+                reject('Error updating item');
+            }
+        });
+    }
 
 
 
