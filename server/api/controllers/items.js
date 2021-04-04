@@ -3,11 +3,11 @@ const router = express.Router();
 const Item = require('../models/items')
 
 //index route
-router.get('/', async(res,req) => {
+router.get('/', async (req,res) => {
     try{
         const items = await Item.all
+        console.log(items)
         res.json({items})
-        res.status(200)
     }
 
     catch{

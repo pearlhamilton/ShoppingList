@@ -1,7 +1,7 @@
 const db = require ('../dbConfig')
 
 
-class Item{
+class Item {
     constructor(data){
         this.id = data.id,
         this.item_name = data.item_name,
@@ -12,7 +12,9 @@ class Item{
     return new Promise (async (resolve, reject) => {
         try {
             const itemsData = await db.query(`SELECT * FROM items;`)
+            console.log(itemsData)
             const items = itemsData.rows.map(i => new Item(i))
+            console.log(items)
             resolve(items);
         } catch (err) {
             reject("Error retrieving items")
@@ -21,3 +23,7 @@ class Item{
 
     }
 }
+
+
+
+module.exports = Item
