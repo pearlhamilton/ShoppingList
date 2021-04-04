@@ -1,3 +1,6 @@
+const db = require ('../dbConfig')
+
+
 class Item{
     constructor(data){
         this.id = data.id,
