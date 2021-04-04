@@ -7,7 +7,7 @@ router.get('/', async (req,res) => {
     try{
         const items = await Item.all
         console.log(items)
-        res.json({items})
+        res.json(items)
     }
 
     catch{
@@ -48,5 +48,17 @@ router.patch('/:id', async (req, res) => {
         res.status(500).json({err})
     }
 })
+
+
+router.delete('/:id', async (req, res) => {
+    try {
+        const item = await Item.findById(parseInt(req.params.id))
+        await item.destroy()
+        res.status(204).json('Item deleted')
+    } catch(err) {
+        res.status(500).json({err})
+    }
+})
+
 
 module.exports = router;

@@ -62,6 +62,17 @@ class Item {
         });
     }
 
+    destroy(){
+        return new Promise(async(resolve, reject) => {
+            try {
+                await db.query(`DELETE FROM items WHERE id = $1;`, [ this.id ]);
+                resolve('Item was deleted')
+            } catch (err) {
+                reject('Item could not be deleted')
+            }
+        })
+    }
+
 
 
 }
