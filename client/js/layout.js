@@ -27,7 +27,7 @@ function formatRow(item, newRow){
 
     addBtn.textContent = "+"
     minusBtn.textContent = "-"
-    deleteBtn.textContent = "X"
+    deleteBtn.innerHTML = "&#10004"
     itemTd.textContent = item.item_name;
     quantityTd.textContent = item.amount;
 
