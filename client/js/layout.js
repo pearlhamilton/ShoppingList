@@ -41,5 +41,10 @@ function formatRow(item, newRow){
     newRow.append(minusTd)
     newRow.append(deleteTd)
 
+    // console.log(item.id)
+    //add event listeners to buttons 
+    addTd.onclick = () => addToQuantity(item.id, newRow)
     return newRow
 }
+
+
