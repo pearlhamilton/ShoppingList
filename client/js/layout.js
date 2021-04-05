@@ -43,7 +43,8 @@ function formatRow(item, newRow){
 
     // console.log(item.id)
     //add event listeners to buttons 
-    addTd.onclick = () => addToQuantity(item.id, newRow)
+    addBtn.onclick = () => addToQuantity(item.id, newRow)
+    deleteBtn.onclick =() => deleteItem(item.id, newRow)
     return newRow
 }
 

@@ -46,6 +46,12 @@ function addToQuantity(id, tr){
 
 
 
-function deleteItem(){
-
+function deleteItem(id, tr){
+    const options = { 
+        method: 'DELETE',
+    };
+    fetch(`http://localhost:3000/items/${id}`, options)
+        .then(tr.remove())
+        .catch(console.warn)
 }
+
