@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fcf8ec;
+    max-width: 100%;
+}
+
+
+h1{
+    color: #456268;
+    text-align: center;
+}
+
+form{
+    display: flex;
+   
+    margin: auto;
+    width:60%;
+}
