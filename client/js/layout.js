@@ -17,12 +17,16 @@ function appendItem(item){
 function formatRow(item, newRow){
 
     const itemTd = document.createElement('td')
+    newRow.setAttribute('id', `${item.id}`)
     const deleteTd = document.createElement('td')
     const deleteBtn = document.createElement('button')
+    const counterTd = document.createElement('td')
     const counterDiv = document.createElement('div')
     const addButton = document.createElement('button')
     const substractButton = document.createElement('button')
     const quantityInput = document.createElement('input')
+    const tickButton = document.createElement('button')
+    const tickTd = document.createElement('td')
 
 
     addButton.textContent = "+"
@@ -32,6 +36,7 @@ function formatRow(item, newRow){
 
     console.log(typeof(item.amount))
 
+    counterTd.append(counterDiv)
     counterDiv.append(substractButton)
     counterDiv.append(quantityInput)
     counterDiv.append(addButton)
@@ -39,15 +44,18 @@ function formatRow(item, newRow){
 
 
 
-
-    deleteBtn.innerHTML = "&#10004"
+    tickButton.innerHTML= "&#10004"
+    deleteBtn.innerHTML = "&#10008"
     itemTd.textContent = item.item_name;
 
     deleteTd.append(deleteBtn)
+    tickTd.append(tickButton)
 
     newRow.append(itemTd)
-    newRow.append(counterDiv)
+    newRow.append(counterTd)
+    newRow.append(tickTd)
     newRow.append(deleteTd)
+    
 
     // console.log(item.id)
     //add event listeners to buttons 
@@ -55,7 +63,7 @@ function formatRow(item, newRow){
 
 
 
-
+    tickButton.onclick = () => gotItem(item.id)
     addButton.onclick = () => add()
     substractButton.onclick = () => subtract()
     deleteBtn.onclick =() => deleteItem(item.id, newRow)
@@ -82,4 +90,11 @@ function formatRow(item, newRow){
 
 
 
+
+
+
+function gotItem(id){
+    const gotItem = document.getElementById(`${id}`)
+    gotItem.style.opacity = 0.2
+}
 

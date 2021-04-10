@@ -1,25 +1,70 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+
 *{
     box-sizing: border-box;
 }
 
 body{
-    background-color: #fcf8ec;
+    background-color: #DEF2F1;
     max-width: 100%;
+    font-family: 'Quicksand', sans-serif;
 }
 
 
 h1{
-    color: #456268;
+    color: #2B7A78;
     text-align: center;
+    font-weight: 600;
+    font-size: 40px;
 }
 
 form{
     display: flex;
-   
+
     margin: auto;
-    width:60%;
+    width:80vw;
+    
 }
 
 .quantityInput{
     width:30px;
+}
+
+#list-area{
+    margin: 20px auto;
+    background-color: #3AAFA9;
+    border-radius: 10px;
+    padding: 20px;
+    color: #FEFFFF;
+}
+
+form{
+
+    display:flex;
+    flex-direction: column;
+}
+
+input[type="submit"]{
+    width:30%;
+    margin: 10px auto;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+
+
+}
+
+input[type="text"], input[type="number"]   {
+    width:40%;
+    margin: auto;
+}
+
+label{
+    text-align: center;
+}
+
+td{
+
+    padding: 15px 5px;
 }
