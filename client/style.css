@@ -19,3 +19,7 @@ form{
     margin: auto;
     width:60%;
 }
+
+.quantityInput{
+    width:30px;
+}

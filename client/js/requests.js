@@ -31,14 +31,26 @@ function addItem(e){
         .catch(console.warn)
 }
 
-function addToQuantity(id, tr){
+function editQuantity(id, quantity){
+    const itemQuantity = {
+        amount: quantity
+        
+    }
+    
+    
+    
     const options = { 
         method: 'PATCH',
+        body: JSON.stringify(itemQuantity),
+        headers: { "Content-Type": "application/json" }
     };
+
+   
 
     fetch(`http://localhost:3000/items/${id}`, options)
         .then(r => r.json())
-        .then(data => tr.querySelectorAll('td')[1].textContent = data.item.amount)
+        .then(data => console.log(data))
+        // .then(data => tr.querySelector('input').textContent = data.item.amount)
         .catch(console.warn)
 
 }
