@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
 router.patch('/:id', async (req, res) => {
     try {
         const item = await Item.findById(parseInt(req.params.id))
-        const updatedItem = await item.update(req.body.item_name, req.body.amount)
+        const updatedItem = await item.update (req.body.amount)
         res.json({item: updatedItem})
     } catch(err) {
         res.status(500).json({err})

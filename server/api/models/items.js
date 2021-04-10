@@ -50,10 +50,10 @@ class Item {
         });
     }
 
-    update() {
+    update(amount) {
         return new Promise (async (resolve, reject) => {
             try {
-                let updatedItemData = await db.query(`UPDATE items SET amount = amount + 1 WHERE id = $1 RETURNING *;`, [ this.id ]);
+                let updatedItemData = await db.query(`UPDATE items SET amount = ${amount} WHERE id = $1 RETURNING *;`, [ this.id ]);
                 let updatedItem = new Item(updatedItemData.rows[0]);
                 resolve (updatedItem);
             } catch (err) {
