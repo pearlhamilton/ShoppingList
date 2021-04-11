@@ -34,8 +34,6 @@ form{
 
 #list-area{
     margin: 20px auto;
-    /* border-radius: 10px;
-    padding: 20px; */
     color: #FEFFFF;
     border-collapse: collapse; 
 
@@ -68,7 +66,7 @@ label{
 
 td{
 
-    /* padding: 15px 13px; */
+    padding: 15px 13px;
     background-color: #3AAFA9;
    
 
