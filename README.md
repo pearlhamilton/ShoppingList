@@ -3,6 +3,8 @@
 A simple shopping list app to practise full stack web development and deployment using netlify and heroku. 
 Visit the website [here](https://shoppinglist-pearl.netlify.app/). (Best to view on mobile as it was built mobile first)
 
+![](demo.gif)
+
 ## Built with
 
 + Client side: JavaScript, CSS and HTML
