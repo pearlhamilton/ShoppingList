@@ -16,6 +16,11 @@ function appendItem(item){
 
 function formatRow(item, newRow){
 
+ if (item.got_item === true){
+    newRow.style.opacity = 0.3;
+    newRow.style.color = "black"
+    }
+
     const itemTd = document.createElement('td')
     newRow.setAttribute('id', `${item.id}`)
     const deleteTd = document.createElement('td')
@@ -93,8 +98,17 @@ function formatRow(item, newRow){
 
 
 
-function gotItem(id){
-    const gotItem = document.getElementById(`${id}`)
-    gotItem.style.opacity = 0.2
-}
+// function gotItem(id){
+//     const gotItem = document.getElementById(`${id}`)
+//     gotItem.style.opacity = 0.2
 
+// }
+
+
+// const createNewList = document.getElementById('createNewList')
+// createNewList.addEventListener('click', deleteAll)
+
+// function deleteAll(){
+//    const list = document.getElementById('list-area')
+//    list.forEach(tr => tr.style.backgroundColor = "blue")
+// }
