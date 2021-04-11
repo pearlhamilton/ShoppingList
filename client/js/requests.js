@@ -1,9 +1,11 @@
+const URL_API = 'https://shopping-pearl.herokuapp.com'
+
 window.addEventListener("load", getallItems)
 const form = document.querySelector('form')
 form.addEventListener("submit", addItem)
 
 function getallItems(){
-    fetch('http://localhost:3000/items')
+    fetch(`${URL_API}/items`)
         .then(r => r.json())
         .then(data => appendItems(data))
 }
@@ -24,7 +26,7 @@ function addItem(e){
         headers: { "Content-Type": "application/json" }
     };
 
-    fetch('http://localhost:3000/items', options)
+    fetch(`${URL_API}/items`, options)
         .then(r => r.json())
         .then(data => appendItem(data))
         .then(() => e.target.reset())
@@ -47,7 +49,7 @@ function editQuantity(id, quantity){
 
    
 
-    fetch(`http://localhost:3000/items/${id}/quantity`, options)
+    fetch(`${URL_API}/items/${id}/quantity`, options)
         .then(r => r.json())
         .then(data => console.log(data))
         // .then(data => tr.querySelector('input').textContent = data.item.amount)
@@ -69,7 +71,7 @@ function gotItem(id){
 
    
 
-    fetch(`http://localhost:3000/items/${id}/`, options)
+    fetch(`${URL_API}/items/${id}/`, options)
         .then(r => r.json())
         .then(data => console.log(data))
         .catch(console.warn)
@@ -83,7 +85,7 @@ function deleteItem(id, tr){
     const options = { 
         method: 'DELETE',
     };
-    fetch(`http://localhost:3000/items/${id}`, options)
+    fetch(`${URL_API}/items/${id}`, options)
         .then(tr.remove())
         .catch(console.warn)
 }
