@@ -17,7 +17,7 @@ function appendItem(item){
 function formatRow(item, newRow){
 
  if (item.got_item === true){
-    newRow.style.opacity = 0.3;
+    newRow.style.opacity = 0.5;
     newRow.style.color = "black"
     }
 
