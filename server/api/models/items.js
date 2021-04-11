@@ -5,7 +5,8 @@ class Item {
     constructor(data){
         this.id = data.id,
         this.item_name = data.item_name,
-        this.amount = data.amount
+        this.amount = data.amount,
+        this.got_item = data.got_item
     }
 
  static get all(){
@@ -61,6 +62,20 @@ class Item {
             }
         });
     }
+
+    gotItem() {
+        return new Promise (async (resolve, reject) => {
+            try {
+                let updatedItemData = await db.query(`UPDATE items SET got_item = TRUE WHERE id = $1 RETURNING *;`, [ this.id ]);
+                let updatedItem = new Item(updatedItemData.rows[0]);
+                resolve (updatedItem);
+            } catch (err) {
+                reject('Error updating item');
+            }
+        });
+    }
+
+
 
     destroy(){
         return new Promise(async(resolve, reject) => {
