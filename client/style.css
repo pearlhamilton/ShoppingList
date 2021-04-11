@@ -33,10 +33,10 @@ form{
 }
 
 #list-area{
-    /* margin: 20px auto;
-    border-radius: 10px;
-    padding: 20px;
-    color: #FEFFFF;*/
+    margin: 20px auto;
+    /* border-radius: 10px;
+    padding: 20px; */
+    color: #FEFFFF;
     border-collapse: collapse; 
 
     
