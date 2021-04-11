@@ -59,8 +59,8 @@ function editQuantity(id, quantity){
 function gotItem(id){
 
     const gotItem = document.getElementById(`${id}`)
-    gotItem.style.opacity = 0.2
-    gotItem.style.color = "black"
+    gotItem.style.opacity = 0.5;
+    gotItem.style.color = "black";
     
     const options = { 
         method: 'PATCH',
