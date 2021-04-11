@@ -10,10 +10,10 @@ Visit the website (here) [https://shoppinglist-pearl.netlify.app/]. (Best to vie
   Dependencies: cors, express, pg, nodemon
   
   
-##Installation 
+## Installation 
 Clone or download this repo
 
-##Usage 
+## Usage 
 ## To run the server 
 + Navigate to the root directory of this repository
 + Ensure docker desktop app is running
