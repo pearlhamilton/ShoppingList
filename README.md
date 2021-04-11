@@ -9,7 +9,13 @@ Visit the website [here](https://shoppinglist-pearl.netlify.app/). (Best to view
 + Server side: Node.js
   Dependencies: cors, express, pg, nodemon
   
-  
+## Requirements
+- [x] User can add items to shopping list
+- [x] User can mark items as picked up 
+- [x] User can edit quanity of a specific item
+- [x] User can remove an item from shopping list
+- [x] Items persist after server restart 
+
 ## Installation 
 Clone or download this repo
 
